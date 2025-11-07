@@ -11,21 +11,21 @@ A Python client library for interacting with Bolt Fleet Integration API and Supa
 
 ## Installation
 
-### From GitHub (Private Repository)
+### From GitHub
 
-#### Using SSH (Recommended)
+#### Using HTTPS (Recommended)
 ```bash
-pip install git+ssh://git@github.com/YOUR_USERNAME/bolt-client.git
+pip install git+https://github.com/Taxibeee/bolt_client.git
 ```
 
-#### Using HTTPS with Personal Access Token
+#### Using SSH
 ```bash
-pip install git+https://YOUR_GITHUB_TOKEN@github.com/YOUR_USERNAME/bolt-client.git
+pip install git+ssh://git@github.com/Taxibeee/bolt_client.git
 ```
 
 #### For Development (Editable Install)
 ```bash
-pip install -e git+ssh://git@github.com/YOUR_USERNAME/bolt-client.git#egg=bolt-client
+pip install -e git+https://github.com/Taxibeee/bolt_client.git#egg=bolt-client
 ```
 
 ## Usage
