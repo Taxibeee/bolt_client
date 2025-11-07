@@ -1,26 +1,22 @@
 [project]
-name = "bolt-client"
+name = "bolt"
 version = "0.1.0"
 description = "Client library for interacting with Bolt Fleet Integration API and Supabase"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "requests>=2.31.0",
-    "supabase>=2.0.0",
     "python-dotenv>=1.0.0",
     "pydantic>=2.0.0",
 ]
 authors = [
     {name = "Nasrul Huda", email = "nasrul2001@gmail.com"}
 ]
-license = {text = "MIT"}
+license = "MIT"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["clients", "schemas"]
-
-[tool.setuptools.package-data]
-"*" = ["*.py"]
+py-modules = ["bolt_client", "bolt_schemas"]

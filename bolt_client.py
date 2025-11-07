@@ -1,6 +1,6 @@
 import requests
 import logging 
-from schemas.bolt_schemas import FleetOrder, Vehicle, PortalStatus, Driver, FleetStateLog
+from bolt_schemas import FleetOrder, Vehicle, PortalStatus, Driver, FleetStateLog
 from typing import List, Optional
 from datetime import datetime, timedelta
 import os
@@ -10,9 +10,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-
-class BoltClient:
+class Client:
     """Client for interacting with Bolt Fleet Integration API.
     
     This client handles authentication, token management, and provides methods
@@ -388,12 +386,10 @@ class BoltClient:
         return [FleetStateLog(**log) for log in response.json().get("data", {}).get("state_logs", [])]
 
 
-def create_client() -> BoltClient:
-    """Create a new BoltClient instance.
+def create_client() -> Client:
+    """Create a new Client instance.
     
     Returns:
-        BoltClient: A new BoltClient instance
+        Client: A new Client instance
     """
-    return BoltClient()
-
-bolt: BoltClient = create_client()
+    return Client()
