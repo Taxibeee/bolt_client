@@ -209,6 +209,9 @@ class Client:
         if end_ts is None:
             end_ts = int(datetime.now().timestamp())
         
+        # Handle portal_status - support both enum and direct values
+        portal_status_value = portal_status.value if hasattr(portal_status, 'value') else portal_status
+        
         # First attempt
         response = requests.post(
             f"{self.base_url}/getVehicles",
@@ -219,7 +222,7 @@ class Client:
                 "company_id": company_id,
                 "start_ts": start_ts,
                 "end_ts": end_ts,
-                "portal_status": portal_status.value
+                "portal_status": portal_status_value
             }
         )
         
@@ -235,7 +238,7 @@ class Client:
                     "company_id": company_id,
                     "start_ts": start_ts,
                     "end_ts": end_ts,
-                    "portal_status": portal_status.value
+                    "portal_status": portal_status_value
                 }
             )
         
@@ -280,6 +283,9 @@ class Client:
         if end_ts is None:
             end_ts = int(datetime.now().timestamp())
         
+        # Handle portal_status - support both enum and direct values
+        portal_status_value = portal_status.value if hasattr(portal_status, 'value') else portal_status
+        
         # First attempt
         response = requests.post(
             f"{self.base_url}/getDrivers",
@@ -290,7 +296,7 @@ class Client:
                 "company_id": company_id,
                 "start_ts": start_ts,
                 "end_ts": end_ts,
-                "portal_status": portal_status.value
+                "portal_status": portal_status_value
             }
         )
         
@@ -306,7 +312,7 @@ class Client:
                     "company_id": company_id,
                     "start_ts": start_ts,
                     "end_ts": end_ts,
-                    "portal_status": portal_status.value
+                    "portal_status": portal_status_value
                 }
             )
         
